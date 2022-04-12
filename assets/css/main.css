@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    background: radial-gradient(rgb(126, 3, 3), rgb(48, 36, 36));
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.memory {
+
+    justify-content: center;
+    perspective: 100rem;
+
+}
+
+.title {
+    margin-top: 3rem;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.title img {
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    max-width: 100%;
+    height: auto;
+}
+
+.subtitle {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 2rem;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.message__container {
+    padding: 2rem;
+    justify-content: center;
+    justify-self: center;
+    flex-direction: column;
+}
+
+.message {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 3rem;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.clock {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.clock,
+.clock label {
+    font-size: 3rem;
+}
+
+.timer {
+    padding: 2rem;
+    color: whitesmoke;
+    justify-content: center;
+    justify-self: center;
+    flex-direction: column;
+
+}
+
+.card {
+    background-color: black;
+    height: 160px;
+    width: 120px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s;
+}
+
+.card img {
+    height: 160px;
+    width: 120px;
+    object-fit: cover;
+}
+
+.playground {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 1.5rem;
+    margin: 2rem;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .playground {
+        grid-template-columns: repeat(2, auto)
+    }
+
+}
+
+.card {
+    background-color: black;
+    height: 160px;
+    width: 120px;
+    transform: scale(1);
+    position: relative;
+}
+
+.card:active {
+    transform: scale(0.95);
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+.front,
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg)
+}
+
+.card.flip {
+    transform: rotateY(180deg)
+}
